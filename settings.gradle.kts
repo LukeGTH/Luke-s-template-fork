@@ -27,3 +27,4 @@ rootDir
         file.isDirectory && file.resolve("build.gradle.kts").exists()
     }!!
     .forEach { include(":plugin:${it.name}") }
+    include(':MyFirstKotlinPlugin')
