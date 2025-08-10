@@ -20,3 +20,8 @@ jobs:
       - name: Build the plugin
         run: ./gradlew MyFirstKotlinPlugin:build
       - name: Upload Plugin
+      uses: actions/upload-artifact@v4
+        with:
+          name: MyFirstKotlinPlugin
+          path: MyFirstKotlinPlugin/build/libs/*.jar
+
