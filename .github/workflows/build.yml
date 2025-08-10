@@ -17,7 +17,7 @@ jobs:
       - name: Run Gradle build
         run: ./gradlew MyFirstKotlinPlugin:build
       - name: Print file structure
-        run: ls -la build/libs/
+        run: ls -la 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
