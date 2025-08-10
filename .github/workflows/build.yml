@@ -14,9 +14,14 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - run: chmod +x gradlew
-      - run: ./gradlew MyFirstKotlinPlugin:build
-      - uses: actions/upload-artifact@v4
+      - name: Run Gradle build
+        run: ./gradlew MyFirstKotlinPlugin:build
+      - name: Print file structure
+        run: ls -la MyFirstKotlinPlugin/build/libs/
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
           name: MyFirstKotlinPlugin-release
           path: MyFirstKotlinPlugin/build/libs/*.jar
+
 
