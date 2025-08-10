@@ -1,21 +1,30 @@
-version = "1.0.0" // Plugin version. Increment this to trigger the updater
-description = "My first Kotlin plugin!" // Plugin description that will be shown to user
-
-aliucord {
-    // Changelog of your plugin
-    changelog.set(
-        """
-        Some changelog
-        """.trimIndent()
-    )
-    // Image or Gif that will be shown at the top of your changelog page
-    // changelogMedia.set("https://cool.png")
-
-    // Add additional authors to this plugin
-    // author("Name", 0)
-    // author("Name", 0)
-
-    // Excludes this plugin from the updater, meaning it won't show up for users.
-    // Set this if the plugin is unfinished
-    excludeFromUpdaterJson.set(true)
+plugins {
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.ktlint)
+    alias(libs.plugins.aliucord.gradle)
 }
+
+group = "com.github.MyFirstKotlinPlugin"
+version = "1.0.0"
+
+dependencies {
+    implementation(libs.aliucord)
+    implementation(libs.kotlin.stdlib)
+}
+
+// Aliucord plugin settings
+configure<com.aliucord.gradle.AliucordExtension> {
+    pluginId.set("com.github.MyFirstKotlinPlugin")
+    pluginName.set("MyFirstKotlinPlugin")
+    pluginVersion.set(version.toString())
+    description.set("My first Aliucord plugin written in Kotlin")
+    author.set("MyName")
+}
+
+// ktlint settings
+configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+    version.set("0.50.0")
+    ignoreFailures.set(true)
+    outputToConsole.set(true)
+}
+
