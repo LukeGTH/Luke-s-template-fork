@@ -19,6 +19,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: MyFirstKotlinPlugin-release
-          path: plugin/MyFirstKotlinPlugin/build/outputs/*.jar
+         name: MyFirstKotlinPlugin-release
+     path: plugin/MyFirstKotlinPlugin/build/distributions/*.zip
+ 
 
