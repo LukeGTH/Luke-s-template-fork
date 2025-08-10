@@ -15,5 +15,4 @@ android {
 dependencies {
     compileOnly("com.aliucord:api:2.0.0-beta.1")
 }
-./gradlew MyFirstKotlinPlugin:assemble
 	
