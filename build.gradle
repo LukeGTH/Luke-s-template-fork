@@ -1,41 +1,19 @@
-plugins {
-    id("com.android.library") version "8.1.1"
-    id("org.jetbrains.kotlin.android") version "1.8.20"
-    id("com.aliucord.gradle") version "2.0.0-beta.1"
-}
-
-android {
-    namespace = "dev.alucord.plugins"
-    compileSdk = 33
-
-    defaultConfig {
-        minSdk = 26
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        jvmTarget = "17"
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven("https://maven.aliucord.com")
+        maven("https://maven.aliucord.com/snapshots")
     }
 }
 
-repositories {
-    mavenCentral()
-    maven("https://www.jitpack.io")
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://jitpack.io")
+    }
 }
 
-dependencies {
-    compileOnly("com.aliucord:api:2.0.0-beta.1")
-}
-
-// Tarefa para criar o .zip para o Aliucord
-tasks.register<Zip>("zipPlugin") {
-    from(tasks.jar.get().archiveFile.get())
-    archiveFileName.set("MyFirstKotlinPlugin.zip")
-    destinationDirectory.set(file("build/distributions"))
-}
-
-
+rootProject.name = "MyFirstKotlinPlugin"
+include(":plugin")
