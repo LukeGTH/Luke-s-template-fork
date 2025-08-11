@@ -1,30 +1,19 @@
-@file:Suppress("UnstableApiUsage")
-
 pluginManagement {
     repositories {
-        google()
         gradlePluginPortal()
+        maven("https://maven.aliucord.com")
         maven("https://maven.aliucord.com/snapshots")
-        maven("https://jitpack.io")
     }
 }
 
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
-        maven("https://maven.aliucord.com/snapshots")
+        maven("https://jitpack.io")
     }
-
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 }
 
-rootProject.name = "aliucord-plugins"
+rootProject.name = "MyFirstKotlinPlugin"
 
-rootDir
-    .resolve("plugin")
-    .listFiles { file ->
-        file.isDirectory && file.resolve("build.gradle.kts").exists()
-    }!!
-    .forEach { include(":plugin:${it.name}") }
-    include(":MyFirstKotlinPlugin")
