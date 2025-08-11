@@ -13,23 +13,24 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_24
-        targetCompatibility = JavaVersion.VERSION_24
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "24"
+        jvmTarget = "17"
     }
 }
 
 repositories {
-    mavenCentral() 
+    mavenCentral()
+    maven { url 'https://maven.aliucord.com/com' }
     maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compileOnly("com.aliucord:api:2.0.0-beta.1")
     implementation 'com.github.User:Repo:Tag'
+    compileOnly("com.aliucord:api:2.0.0-beta.1")
 }
 
 tasks.register<Zip>("zipPlugin") {
@@ -37,5 +38,4 @@ tasks.register<Zip>("zipPlugin") {
     archiveFileName.set("MyFirstKotlinPlugin.zip")
     destinationDirectory.set(file("build/distributions"))
 }
-
 
