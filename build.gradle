@@ -23,12 +23,13 @@ android {
 }
 
 repositories {
-    mavenCentral()
-    maven("https://www.jitpack.io")
+    mavenCentral() 
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
     compileOnly("com.aliucord:api:2.0.0-beta.1")
+    implementation 'com.github.User:Repo:Tag'
 }
 
 tasks.register<Zip>("zipPlugin") {
