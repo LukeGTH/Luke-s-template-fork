@@ -36,3 +36,6 @@ To build and deploy your plugin:
 
 Everything in this repo is released into the public domain. You may use it however you want with no
 conditions whatsoever
+
+#########
+This repository is 98% by Gemini AI
