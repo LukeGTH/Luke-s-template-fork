@@ -1,7 +1,7 @@
 plugins {
     id("com.android.library") version "8.1.1"
     id("org.jetbrains.kotlin.android") version "1.8.20"
-    id("com.aliucord.gradle") version "2.0.0-beta.1"
+    id("com.aliucord.plugin") version "2.0.0-beta.1"
 }
 
 android {
