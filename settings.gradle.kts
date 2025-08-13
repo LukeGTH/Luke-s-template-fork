@@ -15,6 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MyFirstKotlinPlugin"
 include(":plugin")
 
