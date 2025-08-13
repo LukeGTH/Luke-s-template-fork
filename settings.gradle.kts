@@ -4,7 +4,6 @@ pluginManagement {
         google()
         mavenCentral()
         maven("https://maven.aliucord.com")
-        maven("https://maven.aliucord.com/snapshots")
     }
 }
 dependencyResolutionManagement {
